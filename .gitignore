@@ -1,0 +1,16 @@
+# Dữ liệu dung lượng lớn (Bắt buộc phải bỏ qua do giới hạn 100MB của GitHub)
+creditcard.csv
+
+# Python cache & build files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.pytest_cache/
+.vscode/
+.idea/
+
+# Hệ thống
+.DS_Store
+Thumbs.db
