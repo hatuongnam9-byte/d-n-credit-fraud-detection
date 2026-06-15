@@ -7,6 +7,7 @@ Dự án này xây dựng một hệ thống học máy (Machine Learning) toàn
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Dataset](https://img.shields.io/badge/Dataset-Kaggle-orange.svg)
+Dự án phát hiện giao dịch thẻ tín dụng gian lận sử dụng các thuật toán Machine Learning. 
 Dataset sử dụng: [Credit Card Fraud Detection - Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud),  
 gồm **284,807 giao dịch** với **492 giao dịch gian lận (0.17%)**
 ---
