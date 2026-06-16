@@ -26,9 +26,8 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Mã nguồn: `buoc_1.py` hoặc `Bước 1 Khám phá và phân tích dữ liệu ban đầu (EDA).py`
    - Nhiệm vụ: Đọc dữ liệu, kiểm tra cấu trúc, tìm giá trị khuyết thiếu và phân tích sự mất cân bằng giữa giao dịch bình thường (Class 0) và gian lận (Class 1).
    - Biểu đồ đầu ra: `class_distribution.png` (Biểu thị tỷ lệ mất cân bằng lớp).
-   - Kết quả biểu đồ class distribution:
-     ![Class Distribution](outputs/class_distribution.png)
-<img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/09679287-0525-454e-b0a1-6e63d1300316" />
+    - Kết quả biểu đồ class distribution:
+      ![Class Distribution](output/class_distribution.png)
 
      ## 📊 Nhận xét quan trọng
   
@@ -39,10 +38,10 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Mã nguồn: `buoc_2.py` hoặc `Bước 2 Phân tích mô tả chi tiết (Descriptive Analysis).py`
    - Nhiệm vụ: Thống kê mô tả chi tiết thuộc tính số tiền giao dịch (`Amount`), phân bố thời gian giao dịch (`Time`), và vẽ ma trận tương quan giữa tất cả các đặc trưng.
    - Biểu đồ đầu ra: `amount_distribution.png` (Box plot số tiền), `time_distribution.png` (KDE plot thời gian), `correlation_matrix.png` (Heatmap ma trận tương quan).
-   - kết quả ba biểu đồ:
-     ![Amount Distribution](outputs/amount_distribution.png)
-     ![Time Distribution](outputs/time_distribution.png)
-     ![Correlation Matrix](outputs/correlation_matrix.png)
+    - kết quả ba biểu đồ:
+      ![Amount Distribution](output/amount_distribution.png)
+      ![Time Distribution](output/time_distribution.png)
+      ![Correlation Matrix](output/correlation_matrix.png)
 
  ## 📊 Nhận xét biểu đồ phân phối số tiền giao dịch
 
@@ -60,7 +59,7 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
 
 ## 📊 Nhận xét Biểu đồ Phân bố Thời gian Giao dịch
 
-![Time Distribution](outputs/time_distribution.png)
+![Time Distribution](output/time_distribution.png)
 
 **Nhận xét:**
 
@@ -79,7 +78,7 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
 
 ## 📊 Nhận xét Ma trận Tương quan (Correlation Matrix)
 
-![Correlation Matrix](outputs/correlation_matrix.png)
+![Correlation Matrix](output/correlation_matrix.png)
 
 **Nhận xét:**
 - Các đặc trưng **V1–V28** hầu như **không tương quan với nhau** (màu xám) 
@@ -121,7 +120,7 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Nhiệm vụ: Huấn luyện 3 mô hình phân loại: **Logistic Regression**, **Random Forest Classifier**, và **XGBoost Classifier**. Thực hiện dự đoán trên tập kiểm thử (giữ nguyên tỷ lệ mất cân bằng thực tế) và so sánh hiệu năng.
    - Biểu đồ đầu ra: `confusion_matrices.png` (Ma trận nhầm lẫn của cả 3 mô hình).
 Kết quả confusion matrix:
-![Confusion_matrix ](outputs/Confusion_matrix.png)
+![Confusion_matrix ](output/confusion_matrices.png)
 ---
 ## 📊 Nhận xét Ma trận Nhầm lẫn (Confusion Matrix)
 
