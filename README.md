@@ -96,6 +96,26 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Mã nguồn: `buoc_3.py` hoặc `Bước 3 Tiền xử lý dữ liệu (Data Preprocessing).py`
    - Nhiệm vụ: Chuẩn hóa dữ liệu bằng `RobustScaler` (chống chịu tốt với ngoại trị), phân chia tập Train/Test theo tỷ lệ 80/20, áp dụng thuật toán **SMOTE** (Oversampling) để cân bằng tập huấn luyện từ 394 mẫu gian lận lên 227,451 mẫu.
 
+    ## 📊 Kết quả Tiền xử lý & Áp dụng SMOTE
+
+**Sau khi áp dụng SMOTE:**
+
+| Tập dữ liệu | Kích thước | Ghi chú |
+|-------------|-----------|---------|
+| Train đặc trưng (X_train_res) | (454,902 × 30) | Sau SMOTE |
+| Train nhãn (y_train_res) | (454,902,) | 227,451 Bình thường vs 227,451 Gian lận |
+| Test đặc trưng (X_test) | (56,962 × 30) | Giữ nguyên, không SMOTE |
+| Test nhãn (y_test) | (56,962,) | Phân phối gốc |
+
+**Nhận xét:**
+- Trước SMOTE: dữ liệu gian lận chỉ chiếm **0.17%** → mô hình rất khó học
+- Sau SMOTE: tập Train được cân bằng hoàn toàn **50/50** 
+→ mô hình có đủ mẫu gian lận để học hiệu quả
+- Tập Test **giữ nguyên phân phối gốc** để đánh giá mô hình sát với thực tế nhất
+
+> 💡 **Lưu ý quan trọng:** SMOTE chỉ được áp dụng trên tập Train, 
+> **không áp dụng trên tập Test** để tránh làm sai lệch kết quả đánh giá!
+
 4. **Bước 4: Huấn luyện và Đánh giá Mô hình**
    - Mã nguồn: `buoc_4.py` hoặc `Bước 4 Huấn luyện và Đánh giá Mô hình.py`
    - Nhiệm vụ: Huấn luyện 3 mô hình phân loại: **Logistic Regression**, **Random Forest Classifier**, và **XGBoost Classifier**. Thực hiện dự đoán trên tập kiểm thử (giữ nguyên tỷ lệ mất cân bằng thực tế) và so sánh hiệu năng.
