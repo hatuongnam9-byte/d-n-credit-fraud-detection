@@ -60,6 +60,8 @@ Hộp rộng hơn nhiều → số tiền giao dịch gian lận biến động 
      ## 💡 Kết luận quan trọng:
 
 Trái với suy nghĩ thông thường, giao dịch gian lận không nhất thiết có số tiền lớn — thậm chí trung vị còn thấp hơn giao dịch bình thường. Kẻ gian lận thường thực hiện nhiều giao dịch nhỏ để tránh bị phát hiện!
+
+
 3. **Bước 3: Tiền xử lý dữ liệu (Data Preprocessing)**
    - Mã nguồn: `buoc_3.py` hoặc `Bước 3 Tiền xử lý dữ liệu (Data Preprocessing).py`
    - Nhiệm vụ: Chuẩn hóa dữ liệu bằng `RobustScaler` (chống chịu tốt với ngoại trị), phân chia tập Train/Test theo tỷ lệ 80/20, áp dụng thuật toán **SMOTE** (Oversampling) để cân bằng tập huấn luyện từ 394 mẫu gian lận lên 227,451 mẫu.
