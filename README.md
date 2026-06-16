@@ -120,8 +120,28 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Mã nguồn: `buoc_4.py` hoặc `Bước 4 Huấn luyện và Đánh giá Mô hình.py`
    - Nhiệm vụ: Huấn luyện 3 mô hình phân loại: **Logistic Regression**, **Random Forest Classifier**, và **XGBoost Classifier**. Thực hiện dự đoán trên tập kiểm thử (giữ nguyên tỷ lệ mất cân bằng thực tế) và so sánh hiệu năng.
    - Biểu đồ đầu ra: `confusion_matrices.png` (Ma trận nhầm lẫn của cả 3 mô hình).
-
+Kết quả confusion matrix:
+![Confusion_matrix ](outputs/Confusion_matrix.png)
 ---
+## 📊 Nhận xét Ma trận Nhầm lẫn (Confusion Matrix)
+
+| | Logistic Regression | Random Forest | XGBoost |
+|--|--|--|--|
+| Dự đoán đúng bình thường (TN) | 55,430 | 56,734 | 56,694 |
+| Báo nhầm gian lận (FP) | 1,434 | 130 | 170 |
+| Bỏ sót gian lận (FN) | 8 | 14 | 11 |
+| Bắt đúng gian lận (TP) | 90 | 84 | 87 |
+
+**💡 Nhận xét:**
+
+- **Logistic Regression** bắt được nhiều gian lận nhất **(90/98)** nhưng báo nhầm rất nhiều
+(1,434 giao dịch bình thường bị nghi oan) — gây phiền hà cho khách hàng
+- **Random Forest** báo nhầm ít nhất **(130 FP)** nhưng bỏ sót nhiều gian lận hơn (14 giao dịch)
+- **XGBoost** cân bằng tốt nhất — bắt được **87/98** giao dịch gian lận, 
+chỉ báo nhầm 170 trường hợp
+
+> ⚠️ Trong thực tế, **bỏ sót gian lận (FN) nguy hiểm hơn báo nhầm (FP)**.  
+> Do đó **Logistic Regression** vẫn là lựa chọn an toàn nhất dù Precision thấp.
 
 ## 📈 Kết quả huấn luyện và So sánh mô hình
 Dưới đây là bảng so sánh hiệu năng của các mô hình (được xếp thứ tự theo độ nhạy **Recall** lớp 1):
