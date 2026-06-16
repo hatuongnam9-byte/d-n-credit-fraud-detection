@@ -1,4 +1,4 @@
-<img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/09679287-0525-454e-b0a1-6e63d1300316" />
+
 # Phát hiện Gian lận Thẻ Tín dụng (Credit Card Fraud Detection)
 
 Dự án này xây dựng một hệ thống học máy (Machine Learning) toàn diện nhằm phát hiện các giao dịch gian lận thẻ tín dụng. Bộ dữ liệu được sử dụng chứa các giao dịch được thực hiện bằng thẻ tín dụng vào tháng 9 năm 2013 bởi các chủ thẻ châu Âu. Bộ dữ liệu này bị mất cân bằng lớp cực kỳ nghiêm trọng, đòi hỏi các kỹ thuật tiền xử lý và mô hình hóa đặc thù.
@@ -28,7 +28,7 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Biểu đồ đầu ra: `class_distribution.png` (Biểu thị tỷ lệ mất cân bằng lớp).
    - Kết quả biểu đồ class distribution:
      ![Class Distribution](outputs/class_distribution.png)
-
+<img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/09679287-0525-454e-b0a1-6e63d1300316" />
 
 2. **Bước 2: Phân tích mô tả chi tiết (Descriptive Analysis)**
    - Mã nguồn: `buoc_2.py` hoặc `Bước 2 Phân tích mô tả chi tiết (Descriptive Analysis).py`
