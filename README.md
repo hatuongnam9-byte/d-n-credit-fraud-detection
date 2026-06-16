@@ -44,23 +44,19 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
      ![Time Distribution](outputs/time_distribution.png)
      ![Correlation Matrix](outputs/correlation_matrix.png)
 
-     ## 📊 Nhận xét biểu đồ phân phối số tiền giao dịch:
-Lớp 0 (Bình thường - xanh):
+ ## 📊 Nhận xét biểu đồ phân phối số tiền giao dịch
 
-Trung vị khoảng ~20 USD — giao dịch bình thường thường có giá trị nhỏ
-Phân phối tập trung, hộp hẹp → số tiền khá đồng đều
-Có nhiều điểm ngoại lệ (outliers) lên đến ~10,000 USD
+**Lớp 0 - Bình thường (xanh):**
+- Trung vị khoảng **~20 USD** — giao dịch bình thường thường có giá trị nhỏ
+- Phân phối tập trung, hộp hẹp → số tiền khá đồng đều
+- Có nhiều điểm ngoại lệ (outliers) lên đến **~10,000 USD**
 
-Lớp 1 (Gian lận - cam):
+**Lớp 1 - Gian lận (cam):**
+- Trung vị khoảng **~10 USD** — thấp hơn giao dịch bình thường
+- Hộp rộng hơn nhiều → số tiền giao dịch gian lận biến động lớn hơn, trải từ **~1 USD** đến **~300 USD**
+- Ít outliers hơn lớp 0
 
-Trung vị khoảng ~10 USD — thấp hơn giao dịch bình thường
-Hộp rộng hơn nhiều → số tiền giao dịch gian lận biến động lớn hơn, trải từ ~1 USD đến ~300 USD
-Ít outliers hơn lớp 0
-    
-   
-     ## Kết luận quan trọng :
-
-Trái với suy nghĩ thông thường, giao dịch gian lận không nhất thiết có số tiền lớn — thậm chí trung vị còn thấp hơn giao dịch bình thường. Kẻ gian lận thường thực hiện nhiều giao dịch nhỏ để tránh bị phát hiện!
+> 💡 **Kết luận quan trọng:** Trái với suy nghĩ thông thường, giao dịch gian lận không nhất thiết có số tiền lớn — thậm chí trung vị còn thấp hơn giao dịch bình thường. Kẻ gian lận thường thực hiện nhiều giao dịch nhỏ để tránh bị phát hiện!
 
 ## 📊 Nhận xét Ma trận Nhầm lẫn (Confusion Matrix)
 
