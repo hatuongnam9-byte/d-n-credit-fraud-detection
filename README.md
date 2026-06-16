@@ -62,6 +62,25 @@ Hộp rộng hơn nhiều → số tiền giao dịch gian lận biến động 
 
 Trái với suy nghĩ thông thường, giao dịch gian lận không nhất thiết có số tiền lớn — thậm chí trung vị còn thấp hơn giao dịch bình thường. Kẻ gian lận thường thực hiện nhiều giao dịch nhỏ để tránh bị phát hiện!
 
+## 📊 Nhận xét Ma trận Nhầm lẫn (Confusion Matrix)
+
+| | Logistic Regression | Random Forest | XGBoost |
+|--|--|--|--|
+| Dự đoán đúng bình thường (TN) | 55,430 | 56,734 | 56,694 |
+| Báo nhầm gian lận (FP) | 1,434 | 130 | 170 |
+| Bỏ sót gian lận (FN) | 8 | 14 | 11 |
+| Bắt đúng gian lận (TP) | 90 | 84 | 87 |
+
+**💡 Nhận xét:**
+
+- **Logistic Regression** bắt được nhiều gian lận nhất **(90/98)** nhưng báo nhầm rất nhiều
+(1,434 giao dịch bình thường bị nghi oan) — gây phiền hà cho khách hàng
+- **Random Forest** báo nhầm ít nhất **(130 FP)** nhưng bỏ sót nhiều gian lận hơn (14 giao dịch)
+- **XGBoost** cân bằng tốt nhất — bắt được **87/98** giao dịch gian lận, 
+chỉ báo nhầm 170 trường hợp
+
+> ⚠️ Trong thực tế, **bỏ sót gian lận (FN) nguy hiểm hơn báo nhầm (FP)**.  
+> Do đó **Logistic Regression** vẫn là lựa chọn an toàn nhất dù Precision thấp.
 
 3. **Bước 3: Tiền xử lý dữ liệu (Data Preprocessing)**
    - Mã nguồn: `buoc_3.py` hoặc `Bước 3 Tiền xử lý dữ liệu (Data Preprocessing).py`
