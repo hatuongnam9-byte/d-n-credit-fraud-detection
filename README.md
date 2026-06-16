@@ -29,7 +29,8 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Kết quả biểu đồ class distribution:
      ![Class Distribution](outputs/class_distribution.png)
 <img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/09679287-0525-454e-b0a1-6e63d1300316" />
-    -## 📊 Nhận xét quan trọng: Biểu đồ trên cho thấy dữ liệu đang bị mất câng bằng nghiêm trọng, cần phải thực hiện phương SMOTE để cân bằng lại dữ liệu giữa nhóm khách hàng uy tín và gian lận
+    -## 📊 Nhận xét quan trọng
+      Biểu đồ trên cho thấy dữ liệu đang bị mất câng bằng nghiêm trọng, cần phải thực hiện phương SMOTE để cân bằng lại dữ liệu giữa nhóm khách hàng uy tín và gian lận
 
 2. **Bước 2: Phân tích mô tả chi tiết (Descriptive Analysis)**
    - Mã nguồn: `buoc_2.py` hoặc `Bước 2 Phân tích mô tả chi tiết (Descriptive Analysis).py`
