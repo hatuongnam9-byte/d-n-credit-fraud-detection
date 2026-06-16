@@ -38,13 +38,10 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Mã nguồn: `buoc_2.py` hoặc `Bước 2 Phân tích mô tả chi tiết (Descriptive Analysis).py`
    - Nhiệm vụ: Thống kê mô tả chi tiết thuộc tính số tiền giao dịch (`Amount`), phân bố thời gian giao dịch (`Time`), và vẽ ma trận tương quan giữa tất cả các đặc trưng.
    - Biểu đồ đầu ra: `amount_distribution.png` (Box plot số tiền), `time_distribution.png` (KDE plot thời gian), `correlation_matrix.png` (Heatmap ma trận tương quan).
-    - kết quả ba biểu đồ:
-      ![Amount Distribution](output/amount_distribution.png)
-      ![Time Distribution](output/time_distribution.png)
-      ![Correlation Matrix](output/correlation_matrix.png)
+ 
 
  ## 📊 Nhận xét biểu đồ phân phối số tiền giao dịch
-
+      ![Time Distribution](output/time_distribution.png)
 **Lớp 0 - Bình thường (xanh):**
 - Trung vị khoảng **~20 USD** — giao dịch bình thường thường có giá trị nhỏ
 - Phân phối tập trung, hộp hẹp → số tiền khá đồng đều
