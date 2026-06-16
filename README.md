@@ -57,7 +57,7 @@ Trung vị khoảng ~10 USD — thấp hơn giao dịch bình thường
 Hộp rộng hơn nhiều → số tiền giao dịch gian lận biến động lớn hơn, trải từ ~1 USD đến ~300 USD
 Ít outliers hơn lớp 0
     
-      ## 💡 Kết luận quan trọng:
+     ## 💡 Kết luận quan trọng:
 
 Trái với suy nghĩ thông thường, giao dịch gian lận không nhất thiết có số tiền lớn — thậm chí trung vị còn thấp hơn giao dịch bình thường. Kẻ gian lận thường thực hiện nhiều giao dịch nhỏ để tránh bị phát hiện!
 
