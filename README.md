@@ -58,6 +58,25 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
 
 > 💡 **Kết luận quan trọng:** Trái với suy nghĩ thông thường, giao dịch gian lận không nhất thiết có số tiền lớn — thậm chí trung vị còn thấp hơn giao dịch bình thường. Kẻ gian lận thường thực hiện nhiều giao dịch nhỏ để tránh bị phát hiện!
 
+## 📊 Nhận xét Biểu đồ Phân bố Thời gian Giao dịch
+
+![Time Distribution](outputs/time_distribution.png)
+
+**Nhận xét:**
+
+**Lớp 0 - Bình thường (xanh):**
+- Có **2 đỉnh rõ ràng** ở khoảng **~50,000s** và **~150,000s** 
+→ giao dịch bình thường tập trung vào **2 khung giờ cao điểm** trong ngày
+- Gần như không có giao dịch ở vùng 0s (nửa đêm)
+
+**Lớp 1 - Gian lận (đỏ):**
+- Phân bố **trải đều hơn** theo thời gian, không có đỉnh rõ ràng như lớp 0
+- Đặc biệt có **tỷ lệ cao hơn ở vùng ~0s** (đầu ngày/nửa đêm) so với giao dịch bình thường
+
+> 💡 **Kết luận quan trọng:** Giao dịch gian lận có xu hướng xảy ra **rải rác hơn theo thời gian**,
+> đặc biệt xuất hiện nhiều hơn vào **khung giờ thấp điểm** (nửa đêm) khi ít người chú ý —
+> đây là đặc điểm quan trọng giúp mô hình phân biệt gian lận!
+
 ## 📊 Nhận xét Ma trận Tương quan (Correlation Matrix)
 
 ![Correlation Matrix](outputs/correlation_matrix.png)
