@@ -36,9 +36,9 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Nhiệm vụ: Thống kê mô tả chi tiết thuộc tính số tiền giao dịch (`Amount`), phân bố thời gian giao dịch (`Time`), và vẽ ma trận tương quan giữa tất cả các đặc trưng.
    - Biểu đồ đầu ra: `amount_distribution.png` (Box plot số tiền), `time_distribution.png` (KDE plot thời gian), `correlation_matrix.png` (Heatmap ma trận tương quan).
    - kết quả ba biểu đồ:
-   - ![Amount Distribution](outputs/amount_distribution.png)
-   - ![Time Distribution](outputs/time_distribution.png)
-   - ![Correlation Matrix](outputs/correlation_matrix.png)
+     ![Amount Distribution](outputs/amount_distribution.png)
+     ![Time Distribution](outputs/time_distribution.png)
+     ![Correlation Matrix](outputs/correlation_matrix.png)
 
 3. **Bước 3: Tiền xử lý dữ liệu (Data Preprocessing)**
    - Mã nguồn: `buoc_3.py` hoặc `Bước 3 Tiền xử lý dữ liệu (Data Preprocessing).py`
