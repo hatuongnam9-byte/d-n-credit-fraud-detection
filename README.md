@@ -41,7 +41,7 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
  
 
  ## 📊 Nhận xét biểu đồ phân phối số tiền giao dịch
-      ![Time Distribution](output/time_distribution.png)
+      ![Time Distribution](output/time_distribution.png) 
 **Lớp 0 - Bình thường (xanh):**
 - Trung vị khoảng **~20 USD** — giao dịch bình thường thường có giá trị nhỏ
 - Phân phối tập trung, hộp hẹp → số tiền khá đồng đều
