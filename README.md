@@ -119,27 +119,6 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Nhiệm vụ: Huấn luyện mô hình đề xuất **Logistic Regression** (sử dụng SMOTE) và thực hiện dự đoán nhãn lớp cũng như xác suất gian lận (probability) cho tập kiểm thử (Test set - 20% dữ liệu gốc).
    - Kết quả đầu ra: Tệp dữ liệu kết quả dự đoán [submission_logistic_regression.csv](file:///c:/Users/hatuo/Downloads/dự%20án%20credit%20card%20fraud%20detection/output/submission_logistic_regression.csv).
 
-### 📊 Phân tích chi tiết kết quả dự đoán
-Phân tích trực tiếp từ tệp tin kết quả dự đoán `output/submission_logistic_regression.csv` trên **56,962 giao dịch** của tập kiểm thử cho thấy:
-
-* **True Negatives (TN) - Đúng bình thường**: **55,430** giao dịch. Mô hình phân loại chính xác các giao dịch hợp pháp này là bình thường.
-* **True Positives (TP) - Phát hiện đúng gian lận**: **90** giao dịch. Mô hình đã phát hiện chính xác các hành vi gian lận.
-* **False Negatives (FN) - Bỏ sót gian lận**: **8** giao dịch. Đây là những giao dịch gian lận thực tế nhưng mô hình dự đoán nhầm là bình thường (tỷ lệ bỏ sót rất thấp, chỉ **8.16%** trên tổng số giao dịch gian lận).
-* **False Positives (FP) - Cảnh báo nhầm**: **1,434** giao dịch. Những giao dịch này là bình thường nhưng mô hình dự đoán nhầm thành gian lận.
-
-### 📈 Các chỉ số hiệu năng đạt được:
-* **Accuracy (Độ chính xác toàn cục)**: **97.47%**
-* **Recall (Độ nhạy - Tỷ lệ phát hiện)**: **91.84%** (Bắt được 90/98 giao dịch gian lận).
-* **Precision (Độ chính xác lớp gian lận)**: **5.91%** (Trong số các giao dịch bị cảnh báo, có 5.91% thực sự là gian lận).
-* **F1-score**: **11.10%** (Trung bình điều hòa giữa Precision và Recall).
-
-### 💡 Kết luận chung cho mô hình đề xuất:
-- **Ưu điểm lớn nhất**: Chỉ số **Recall đạt 91.84%** cực kỳ ấn tượng đối với mô hình tuyến tính đơn giản như Logistic Regression. Mô hình chỉ bỏ sót duy nhất **8 giao dịch gian lận**, điều này giúp tổ chức tài chính/ngân hàng ngăn chặn được phần lớn thiệt hại về tiền bạc từ gian lận thẻ.
-- **Thách thức**: Chỉ số **Precision thấp (5.91%)** kéo theo điểm **F1-score thấp (11.10%)**. Hệ quả là mô hình tạo ra **1,434 báo động giả (FP)**.
-- **Tính thực tiễn (Đánh đổi kinh tế)**: Trong bài toán phát hiện gian lận thẻ tín dụng, chi phí đền bù và thiệt hại khi bỏ sót một giao dịch gian lận (False Negative) lớn hơn rất nhiều so với chi phí kiểm tra một cảnh báo giả (False Positive) bằng cách gửi SMS xác thực OTP hoặc gọi điện cho khách hàng. Vì vậy, mô hình đề xuất **Logistic Regression kết hợp SMOTE** là một giải pháp an toàn, tối ưu chi phí và sẵn sàng triển khai trong thực tế.
-
-
----
 Kết quả confusion matrix:
 ![Confusion_matrix ](output/confusion_matrices.png)
 ---
