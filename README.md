@@ -102,6 +102,13 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Mã nguồn: `buoc_4.py` hoặc `Bước 4 Huấn luyện và Đánh giá Mô hình.py`
    - Nhiệm vụ: Huấn luyện 3 mô hình phân loại: **Logistic Regression**, **Random Forest Classifier**, và **XGBoost Classifier**. Thực hiện dự đoán trên tập kiểm thử (giữ nguyên tỷ lệ mất cân bằng thực tế) và so sánh hiệu năng.
    - Biểu đồ đầu ra: `confusion_matrices.png` (Ma trận nhầm lẫn của cả 3 mô hình).
+
+5. **Bước 5: Tạo kết quả dự đoán (Submission)**
+   - Mã nguồn: `buoc_5_submission.py` hoặc `Bước 5 Tạo kết quả dự đoán (Submission).py`
+   - Nhiệm vụ: Huấn luyện mô hình đề xuất **Logistic Regression** (sử dụng SMOTE) và thực hiện dự đoán nhãn lớp cũng như xác suất gian lận cho tập kiểm thử.
+   - Kết quả đầu ra: Tệp dữ liệu kết quả dự đoán `output/submission_logistic_regression.csv`.
+
+---
 Kết quả confusion matrix:
 ![Confusion_matrix ](output/confusion_matrices.png)
 ---
@@ -177,6 +184,10 @@ pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn xgboos
 - **Chạy Bước 4 (Huấn luyện & Đánh giá)**:
   ```powershell
   $env:PYTHONIOENCODING='utf-8'; python buoc_4.py
+  ```
+- **Chạy Bước 5 (Tạo kết quả dự đoán - Submission)**:
+  ```powershell
+  $env:PYTHONIOENCODING='utf-8'; python buoc_5_submission.py
   ```
 
 ---
