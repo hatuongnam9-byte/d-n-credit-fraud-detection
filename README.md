@@ -118,7 +118,6 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
    - Mã nguồn: `buoc_5_submission.py` hoặc `Bước 5 Tạo kết quả dự đoán (Submission).py`
    - Nhiệm vụ: Huấn luyện mô hình đề xuất **Logistic Regression** (sử dụng SMOTE) và thực hiện dự đoán nhãn lớp cũng như xác suất gian lận (probability) cho tập kiểm thử (Test set - 20% dữ liệu gốc).
    - Kết quả đầu ra: Tệp dữ liệu kết quả dự đoán [submission_logistic_regression.csv]
-output/submission_logistic_regression.csv
 
 Kết quả confusion matrix:
 ![Confusion_matrix ](output/confusion_matrices.png)
