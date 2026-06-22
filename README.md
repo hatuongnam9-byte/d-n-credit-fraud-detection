@@ -46,11 +46,11 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
 
 ## Nhận xét (Insights):
 
-Hiện tượng: Phân phối của giao dịch hợp lệ (Normal) có tính chu kỳ với 2 đỉnh rõ rệt (tương ứng với khung giờ hoạt động cao điểm trong ngày). Ngược lại, giao dịch gian lận (Fraud) phân bổ rải rác hơn, không tuân theo chu kỳ này.
+- Hiện tượng: Phân phối của giao dịch hợp lệ (Normal) có tính chu kỳ với 2 đỉnh rõ rệt (tương ứng với khung giờ hoạt động cao điểm trong ngày). Ngược lại, giao dịch gian lận (Fraud) phân bổ rải rác hơn, không tuân theo chu kỳ này.
 
-Điểm nhấn: Tại các "vùng trũng" (thấp điểm) của giao dịch hợp lệ (như mốc 100k giây - khoảng 3h-4h sáng), tỷ trọng giao dịch gian lận vẫn duy trì, thậm chí tập trung cao hơn.
+- Điểm nhấn: Tại các "vùng trũng" (thấp điểm) của giao dịch hợp lệ (như mốc 100k giây - khoảng 3h-4h sáng), tỷ trọng giao dịch gian lận vẫn duy trì, thậm chí tập trung cao hơn.
 
-Kết luận: Time là một feature có giá trị vì nó cho thấy kẻ gian hoạt động bất chấp nhịp sinh học của người dùng.
+* Kết luận: Time là một feature có giá trị vì nó cho thấy kẻ gian hoạt động bất chấp nhịp sinh học của người dùng.
 
 ## 📊 Nhận xét Ma trận Tương quan (Correlation Matrix)
 
