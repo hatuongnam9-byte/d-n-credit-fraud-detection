@@ -22,7 +22,7 @@ Do giới hạn dung lượng tệp tin của GitHub (<100MB), tệp dữ liệu
 ## 📂 Cấu trúc thư mục dự án
 Dự án được chia thành các bước rõ ràng thông qua các tệp tin mã nguồn (có cả bản tiếng Việt có dấu và bản không dấu để tránh lỗi mã hóa trên Windows PowerShell):
 
-1. **Bước 1: Khám phá và phân tích dữ liệu ban đầu (EDA)**
+## Bước 1: Khám phá và phân tích dữ liệu ban đầu (EDA)**
    - Mã nguồn: `buoc_1.py` hoặc `Bước 1 Khám phá và phân tích dữ liệu ban đầu (EDA).py`
    - Nhiệm vụ: Đọc dữ liệu, kiểm tra cấu trúc, tìm giá trị khuyết thiếu và phân tích sự mất cân bằng giữa giao dịch bình thường (Class 0) và gian lận (Class 1).
    - Biểu đồ đầu ra: `class_distribution.png` (Biểu thị tỷ lệ mất cân bằng lớp).
@@ -34,7 +34,7 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
 
       Biểu đồ trên cho thấy dữ liệu đang bị mất câng bằng nghiêm trọng, cần phải thực hiện phương SMOTE để cân bằng lại dữ liệu giữa nhóm khách hàng uy tín và gian lận
 
-2. **Bước 2: Phân tích mô tả chi tiết (Descriptive Analysis)**
+## Bước 2: Phân tích mô tả chi tiết (Descriptive Analysis)**
    - Mã nguồn: `buoc_2.py` hoặc `Bước 2 Phân tích mô tả chi tiết (Descriptive Analysis).py`
    - Nhiệm vụ: Thống kê mô tả chi tiết thuộc tính số tiền giao dịch (`Amount`), phân bố thời gian giao dịch (`Time`), và vẽ ma trận tương quan giữa tất cả các đặc trưng.
    - Biểu đồ đầu ra: `amount_distribution.png` (Box plot số tiền), `time_distribution.png` (KDE plot thời gian), `correlation_matrix.png` (Heatmap ma trận tương quan).
@@ -74,7 +74,7 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
 
 > 💡 **Kết luận:** Không có đặc trưng đơn lẻ nào đủ mạnh để phân biệt gian lận, 
 > các mô hình Machine Learning cần kết hợp nhiều đặc trưng cùng lúc mới cho kết quả tốt.
-3. **Bước 3: Tiền xử lý dữ liệu (Data Preprocessing)**
+## Bước 3: Tiền xử lý dữ liệu (Data Preprocessing)**
    - Mã nguồn: `buoc_3.py` hoặc `Bước 3 Tiền xử lý dữ liệu (Data Preprocessing).py`
    - Nhiệm vụ: Chuẩn hóa dữ liệu bằng `RobustScaler` (chống chịu tốt với ngoại trị), phân chia tập Train/Test theo tỷ lệ 80/20, áp dụng thuật toán **SMOTE** (Oversampling) để cân bằng tập huấn luyện từ 394 mẫu gian lận lên 227,451 mẫu.
 
@@ -98,7 +98,7 @@ Dự án được chia thành các bước rõ ràng thông qua các tệp tin m
 > 💡 **Lưu ý quan trọng:** SMOTE chỉ được áp dụng trên tập Train, 
 > **không áp dụng trên tập Test** để tránh làm sai lệch kết quả đánh giá!
 
-4. **Bước 4: Huấn luyện và Đánh giá Mô hình**
+## Bước 4: Huấn luyện và Đánh giá Mô hình**
    - Mã nguồn: `buoc_4.py` hoặc `Bước 4 Huấn luyện và Đánh giá Mô hình.py`
    - Nhiệm vụ: Huấn luyện 3 mô hình phân loại: **Logistic Regression**, **Random Forest Classifier**, và **XGBoost Classifier**. Thực hiện dự đoán trên tập kiểm thử (giữ nguyên tỷ lệ mất cân bằng thực tế) và so sánh hiệu năng.
    - Biểu đồ đầu ra: `confusion_matrices.png` (Ma trận nhầm lẫn của cả 3 mô hình).
