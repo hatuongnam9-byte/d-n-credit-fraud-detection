@@ -130,7 +130,6 @@ pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn xgboos
   ```
 
 ## 6. Kết quả và đánh giá
-## 12. 📈 Kết Quả & Đánh Giá
 
 ### So Sánh Hiệu Năng 3 Mô Hình
 
