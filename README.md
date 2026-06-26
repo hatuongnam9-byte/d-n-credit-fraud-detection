@@ -7,17 +7,11 @@
 | 3 | Cấu Trúc Dự Án | Bố cục thư mục và file |
 | 4 | Bộ Dữ Liệu | Nguồn dữ liệu, đặc trưng và tải xuống |
 | 5 | Cài Đặt Môi Trường | Hướng dẫn cài đặt và yêu cầu |
-| 6 | Cách Chạy | Hướng dẫn thực thi từng bước |
-| 7 | Bước 1 — Khám Phá Dữ Liệu | Phân tích dữ liệu ban đầu (EDA) |
-| 8 | Bước 2 — Phân Tích Mô Tả | Insights ở cấp độ đặc trưng |
-| 9 | Bước 3 — Tiền Xử Lý | Chuẩn hóa, chia tập, cân bằng dữ liệu |
-| 10 | Bước 4 — Mô Hình Hóa | Huấn luyện và đánh giá mô hình |
-| 11 | Bước 5 — Nộp Kết Quả | Tạo file đầu ra cuối cùng |
-| 12 | Kết Quả & Đánh Giá | So sánh đầy đủ các chỉ số |
-| 13 | Phát Hiện Chính | Những gì dữ liệu cho thấy |
-| 14 | Hạn Chế | Đánh giá trung thực về các điểm yếu |
-| 15 | Hướng Phát Triển | Lộ trình cải thiện |
-| 16 | Tài Liệu Tham Khảo | Nguồn dữ liệu và trích dẫn |
+| 6 | Kết Quả & Đánh Giá | So sánh đầy đủ các chỉ số |
+| 7 | Phát Hiện Chính | Những gì dữ liệu cho thấy |
+| 8 | Hạn Chế | Đánh giá trung thực về các điểm yếu |
+| 9 | Hướng Phát Triển | Lộ trình cải thiện |
+| 10 | Tài Liệu Tham Khảo | Nguồn dữ liệu và trích dẫn |
 
 # 1. Tổng quan dự án
 dự án này được đặt tên là dự án creditcard fraud detection. Đây là Dự án  xây dựng một hệ thống học máy (Machine Learning) toàn diện nhằm phát hiện các giao dịch gian lận thẻ tín dụng. Bộ dữ liệu được sử dụng chứa các giao dịch được thực hiện bằng thẻ tín dụng vào tháng 9 năm 2013 bởi các chủ thẻ châu Âu. Bộ dữ liệu này bị mất cân bằng lớp cực kỳ nghiêm trọng, đòi hỏi các kỹ thuật tiền xử lý và mô hình hóa đặc thù.
