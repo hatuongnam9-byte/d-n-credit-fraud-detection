@@ -1,28 +1,41 @@
-## 📋 Table of Contents
+## 📋 Mục Lục
 
-| # | Section | Description |
-|---|---------|-------------|
-| 1 | Project Overview | Problem, objective, and approach |
-| 2 | ML Pipeline | End-to-end workflow diagram |
-| 3 | Project Structure | Folder and file layout |
-| 4 | Dataset | Data source, features, and download |
-| 5 | Environment Setup | Installation and requirements |
-| 6 | How to Run | Step-by-step execution guide |
-| 7 | Step 1 — EDA | Initial data exploration |
-| 8 | Step 2 — Descriptive Analysis | Feature-level insights |
-| 9 | Step 3 — Preprocessing | Scaling, splitting, balancing |
-| 10 | Step 4 — Modelling | Training and evaluating models |
-| 11 | Step 5 — Submission | Generating final output |
-| 12 | Results & Evaluation | Full metrics comparison |
-| 13 | Key Findings | What the data revealed |
-| 14 | Limitations | Honest assessment of gaps |
-| 15 | Future Work | Roadmap for improvement |
-| 16 | References | Data sources and citations |
+| # | Phần | Mô Tả |
+|---|------|--------|
+| 1 | Tổng Quan Dự Án | Vấn đề, mục tiêu và hướng tiếp cận |
+| 2 | Quy Trình ML | Sơ đồ workflow từ đầu đến cuối |
+| 3 | Cấu Trúc Dự Án | Bố cục thư mục và file |
+| 4 | Bộ Dữ Liệu | Nguồn dữ liệu, đặc trưng và tải xuống |
+| 5 | Cài Đặt Môi Trường | Hướng dẫn cài đặt và yêu cầu |
+| 6 | Cách Chạy | Hướng dẫn thực thi từng bước |
+| 7 | Bước 1 — Khám Phá Dữ Liệu | Phân tích dữ liệu ban đầu (EDA) |
+| 8 | Bước 2 — Phân Tích Mô Tả | Insights ở cấp độ đặc trưng |
+| 9 | Bước 3 — Tiền Xử Lý | Chuẩn hóa, chia tập, cân bằng dữ liệu |
+| 10 | Bước 4 — Mô Hình Hóa | Huấn luyện và đánh giá mô hình |
+| 11 | Bước 5 — Nộp Kết Quả | Tạo file đầu ra cuối cùng |
+| 12 | Kết Quả & Đánh Giá | So sánh đầy đủ các chỉ số |
+| 13 | Phát Hiện Chính | Những gì dữ liệu cho thấy |
+| 14 | Hạn Chế | Đánh giá trung thực về các điểm yếu |
+| 15 | Hướng Phát Triển | Lộ trình cải thiện |
+| 16 | Tài Liệu Tham Khảo | Nguồn dữ liệu và trích dẫn |
 
-# Phát hiện Gian lận Thẻ Tín dụng (Credit Card Fraud Detection)
+# 1. Tổng quan dự án
+dự án này được đặt tên là dự án creditcard fraud detection. Đây là Dự án  xây dựng một hệ thống học máy (Machine Learning) toàn diện nhằm phát hiện các giao dịch gian lận thẻ tín dụng. Bộ dữ liệu được sử dụng chứa các giao dịch được thực hiện bằng thẻ tín dụng vào tháng 9 năm 2013 bởi các chủ thẻ châu Âu. Bộ dữ liệu này bị mất cân bằng lớp cực kỳ nghiêm trọng, đòi hỏi các kỹ thuật tiền xử lý và mô hình hóa đặc thù.
 
-Dự án này xây dựng một hệ thống học máy (Machine Learning) toàn diện nhằm phát hiện các giao dịch gian lận thẻ tín dụng. Bộ dữ liệu được sử dụng chứa các giao dịch được thực hiện bằng thẻ tín dụng vào tháng 9 năm 2013 bởi các chủ thẻ châu Âu. Bộ dữ liệu này bị mất cân bằng lớp cực kỳ nghiêm trọng, đòi hỏi các kỹ thuật tiền xử lý và mô hình hóa đặc thù.
-# 🔍 Credit Card Fraud Detection
+## 🤖 Hướng Tiếp Cận
+
+Dự án này tiếp cận bài toán phát hiện gian lận như một bài toán **phân loại nhị phân** sử dụng Machine Learning có giám sát:
+
+| Lớp | Nhãn | Ý Nghĩa |
+|-----|------|---------|
+| Hợp lệ | 0 | Giao dịch bình thường |
+| Gian lận | 1 | Giao dịch đáng ngờ |
+
+### ⚠️ Thách Thức Cốt Lõi: Mất Cân Bằng Dữ Liệu Nghiêm Trọng
+
+Bộ dữ liệu chứa **284.807 giao dịch**, trong đó chỉ có **492 giao dịch (0,17%)** là gian lận. Một mô hình đơn giản luôn dự đoán "không gian lận" sẽ đạt độ chính xác **99,83%** nhưng **không phát hiện được bất kỳ giao dịch gian lận nào** — điều này khiến độ chính xác (accuracy) trở thành một chỉ số hoàn toàn gây hiểu lầm trong bài toán này.
+
+Dự án giải quyết vấn đề mất cân bằng dữ liệu bằng **SMOTE** và đánh giá mô hình dựa trên **Recall, Precision, F1-Score và ROC-AUC** thay vì accuracy.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
