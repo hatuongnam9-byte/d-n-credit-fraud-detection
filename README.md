@@ -162,7 +162,6 @@ pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn xgboos
 Nếu bạn có bất kỳ đề xuất cải tiến nào về mô hình (như Hyperparameter Tuning hoặc Grid Search), hãy tạo Pull Request hoặc Issues trên repo này!
 
 ## 7. Những phát hiện chính
-## 13. 🔍 Những Phát Hiện Chính
 
 ### 📊 Về Dữ Liệu
 - Dữ liệu mất cân bằng nghiêm trọng: chỉ **0.17%** giao dịch là gian lận (492/284,807)
