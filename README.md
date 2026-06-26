@@ -1,3 +1,23 @@
+## 📋 Table of Contents
+
+| # | Section | Description |
+|---|---------|-------------|
+| 1 | Project Overview | Problem, objective, and approach |
+| 2 | ML Pipeline | End-to-end workflow diagram |
+| 3 | Project Structure | Folder and file layout |
+| 4 | Dataset | Data source, features, and download |
+| 5 | Environment Setup | Installation and requirements |
+| 6 | How to Run | Step-by-step execution guide |
+| 7 | Step 1 — EDA | Initial data exploration |
+| 8 | Step 2 — Descriptive Analysis | Feature-level insights |
+| 9 | Step 3 — Preprocessing | Scaling, splitting, balancing |
+| 10 | Step 4 — Modelling | Training and evaluating models |
+| 11 | Step 5 — Submission | Generating final output |
+| 12 | Results & Evaluation | Full metrics comparison |
+| 13 | Key Findings | What the data revealed |
+| 14 | Limitations | Honest assessment of gaps |
+| 15 | Future Work | Roadmap for improvement |
+| 16 | References | Data sources and citations |
 
 # Phát hiện Gian lận Thẻ Tín dụng (Credit Card Fraud Detection)
 
