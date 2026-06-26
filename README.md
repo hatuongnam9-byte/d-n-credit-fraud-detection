@@ -37,14 +37,6 @@ Bộ dữ liệu chứa **284.807 giao dịch**, trong đó chỉ có **492 giao
 
 Dự án giải quyết vấn đề mất cân bằng dữ liệu bằng **SMOTE** và đánh giá mô hình dựa trên **Recall, Precision, F1-Score và ROC-AUC** thay vì accuracy.
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Dataset](https://img.shields.io/badge/Dataset-Kaggle-orange.svg)
-Dự án phát hiện giao dịch thẻ tín dụng gian lận sử dụng các thuật toán Machine Learning. 
-Dataset sử dụng: [Credit Card Fraud Detection - Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud),  
-gồm **284,807 giao dịch** với **492 giao dịch gian lận (0.17%)**
----
-
 ## 📌 Bộ dữ liệu (Dataset)
 Do giới hạn dung lượng tệp tin của GitHub (<100MB), tệp dữ liệu gốc `creditcard.csv` (150MB) không được đẩy lên kho lưu trữ này. 
 - Bạn có thể tải bộ dữ liệu trực tiếp từ liên kết: [GeeksforGeeks creditcard.csv](https://media.geeksforgeeks.org/wp-content/uploads/20240904104950/creditcard.csv)
