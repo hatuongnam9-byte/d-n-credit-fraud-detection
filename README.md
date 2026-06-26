@@ -6,7 +6,7 @@
 | 2 | Quy Trình ML | Sơ đồ workflow từ đầu đến cuối |
 | 3 | Cấu Trúc Dự Án | Bố cục thư mục và file |
 | 4 | Bộ Dữ Liệu | Nguồn dữ liệu, đặc trưng và tải xuống |
-| 5 | Cài Đặt Môi Trường | Hướng dẫn cài đặt và yêu cầu |
+| 5 | Hướng dẫn cài đặt và Chạy dự án | Hướng dẫn cài đặt và yêu cầu |
 | 6 | Kết Quả & Đánh Giá | So sánh đầy đủ các chỉ số |
 | 7 | Phát Hiện Chính | Những gì dữ liệu cho thấy |
 | 8 | Hạn Chế | Đánh giá trung thực về các điểm yếu |
@@ -31,152 +31,36 @@ Bộ dữ liệu chứa **284.807 giao dịch**, trong đó chỉ có **492 giao
 
 Dự án giải quyết vấn đề mất cân bằng dữ liệu bằng **SMOTE** và đánh giá mô hình dựa trên **Recall, Precision, F1-Score và ROC-AUC** thay vì accuracy.
 
-# 2. Quy trình chạy machine learning
-Dự án được chia thành các bước rõ ràng thông qua các tệp tin mã nguồn (có cả bản tiếng Việt có dấu và bản không dấu để tránh lỗi mã hóa trên Windows PowerShell):
+## 2. 🔄 Quy Trình Dự Án
 
-## Bước 1: Khám phá và phân tích dữ liệu ban đầu (EDA)**
-   - Mã nguồn: `buoc_1.py` hoặc `Bước 1 Khám phá và phân tích dữ liệu ban đầu (EDA).py`
-   - Nhiệm vụ: Đọc dữ liệu, kiểm tra cấu trúc, tìm giá trị khuyết thiếu và phân tích sự mất cân bằng giữa giao dịch bình thường (Class 0) và gian lận (Class 1).
-   - Biểu đồ đầu ra: `class_distribution.png` (Biểu thị tỷ lệ mất cân bằng lớp).
-    - Kết quả biểu đồ class distribution:
-      ![Class Distribution](output/class_distribution.png)
+### Bước 1 — Khám Phá Dữ Liệu Ban Đầu (EDA)
+- **Mã nguồn:** `scripts/buoc_1.py`
+- Đọc dữ liệu, kiểm tra cấu trúc và tìm giá trị khuyết thiếu
+- Phân tích sự mất cân bằng giữa giao dịch bình thường (Class 0) và gian lận (Class 1)
+- **Đầu ra:** `output/class_distribution.png`
 
-     ## 📊 Nhận xét quan trọng
-  
+### Bước 2 — Phân Tích Mô Tả Chi Tiết (Descriptive Analysis)
+- **Mã nguồn:** `scripts/buoc_2.py`
+- Thống kê mô tả số tiền giao dịch (`Amount`) và thời gian (`Time`)
+- Vẽ ma trận tương quan giữa tất cả các đặc trưng
+- **Đầu ra:** `output/amount_distribution.png`, `output/time_distribution.png`, `output/correlation_matrix.png`
 
-      Biểu đồ trên cho thấy dữ liệu đang bị mất câng bằng nghiêm trọng, cần phải thực hiện phương SMOTE để cân bằng lại dữ liệu giữa nhóm khách hàng uy tín và gian lận
+### Bước 3 — Tiền Xử Lý Dữ Liệu (Preprocessing)
+- **Mã nguồn:** `scripts/buoc_3.py`
+- Chuẩn hóa dữ liệu bằng `RobustScaler`
+- Phân chia tập Train/Test theo tỷ lệ **80/20**
+- Áp dụng **SMOTE** để cân bằng tập huấn luyện (từ 394 → 227,451 mẫu gian lận)
 
-## Bước 2: Phân tích mô tả chi tiết (Descriptive Analysis)**
-   - Mã nguồn: `buoc_2.py` hoặc `Bước 2 Phân tích mô tả chi tiết (Descriptive Analysis).py`
-   - Nhiệm vụ: Thống kê mô tả chi tiết thuộc tính số tiền giao dịch (`Amount`), phân bố thời gian giao dịch (`Time`), và vẽ ma trận tương quan giữa tất cả các đặc trưng.
-    - Biểu đồ đầu ra: `amount_distribution.png` (Box plot số tiền), `time_distribution.png` (KDE plot thời gian), `correlation_matrix.png` (Heatmap ma trận tương quan).
+### Bước 4 — Huấn Luyện và Đánh Giá Mô Hình (Modelling)
+- **Mã nguồn:** `scripts/buoc_4.py`
+- Huấn luyện 3 mô hình: **Logistic Regression**, **Random Forest**, **XGBoost**
+- Đánh giá dựa trên: Recall, Precision, F1-Score, ROC-AUC
+- **Đầu ra:** `output/confusion_matrices.png`
 
-## 📊 Nhận xét Biểu đồ Phân phối Số tiền Giao dịch
-
-![Amount Distribution](output/amount_distribution.png)
-
-**Nhận xét:**
-
-**Lớp 0 - Bình thường (xanh/Set2):**
-- Trung vị khoảng **~20 USD** — giao dịch bình thường thường có giá trị nhỏ.
-- Phân phối tập trung, hộp hẹp → số tiền khá đồng đều.
-- Có nhiều điểm ngoại lệ (outliers) lên đến **~10,000 USD**.
-
-**Lớp 1 - Gian lận (cam/Set2):**
-- Trung vị khoảng **~10 USD** — thấp hơn giao dịch bình thường.
-- Hộp rộng hơn nhiều → số tiền giao dịch gian lận biến động lớn hơn, trải từ **~1 USD** đến **~300 USD**.
-- Ít outliers hơn lớp 0.
-
-> 💡 **Kết luận quan trọng:** Trái với suy nghĩ thông thường, giao dịch gian lận không nhất thiết có số tiền lớn — thậm chí trung vị còn thấp hơn giao dịch bình thường. Kẻ gian lận thường thực hiện nhiều giao dịch nhỏ để tránh bị phát hiện!
-
-## 📊 Nhận xét Biểu đồ Phân bố Thời gian Giao dịch
-
-![Time Distribution](output/time_distribution.png)
-
-## Nhận xét (Insights):
-
-- Hiện tượng: Phân phối của giao dịch hợp lệ (Normal) có tính chu kỳ với 2 đỉnh rõ rệt (tương ứng với khung giờ hoạt động cao điểm trong ngày). Ngược lại, giao dịch gian lận (Fraud) phân bổ rải rác hơn, không tuân theo chu kỳ này.
-
-- Điểm nhấn: Tại các "vùng trũng" (thấp điểm) của giao dịch hợp lệ (như mốc 100k giây - khoảng 3h-4h sáng), tỷ trọng giao dịch gian lận vẫn duy trì, thậm chí tập trung cao hơn.
-
-* Kết luận: Time là một feature có giá trị vì nó cho thấy kẻ gian hoạt động bất chấp nhịp sinh học của người dùng.
-
-## 📊 Nhận xét Ma trận Tương quan (Correlation Matrix)
-
-![Correlation Matrix](output/correlation_matrix.png)
-
-**Nhận xét:**
-- Các đặc trưng **V1–V28** hầu như **không tương quan với nhau** (màu xám) 
-→ đây là kết quả của PCA, các đặc trưng đã được tách biệt độc lập
-- Đường chéo màu đỏ đậm = mỗi đặc trưng tương quan hoàn toàn với chính nó (= 1.0) — bình thường
-- Cột **Class** (nhãn gian lận) có tương quan nhẹ với một số đặc trưng:
-  - **V4, V11** tương quan dương nhẹ với Class (màu đỏ nhạt)
-  - **V12, V14, V17** tương quan âm nhẹ với Class (màu xanh nhạt)
-- **Amount** và **Time** gần như không tương quan với Class
-
-> 💡 **Kết luận:** Không có đặc trưng đơn lẻ nào đủ mạnh để phân biệt gian lận, 
-> các mô hình Machine Learning cần kết hợp nhiều đặc trưng cùng lúc mới cho kết quả tốt.
-## Bước 3: Tiền xử lý dữ liệu (Data Preprocessing)**
-   - Mã nguồn: `buoc_3.py` hoặc `Bước 3 Tiền xử lý dữ liệu (Data Preprocessing).py`
-   - Nhiệm vụ: Chuẩn hóa dữ liệu bằng `RobustScaler` (chống chịu tốt với ngoại trị), phân chia tập Train/Test theo tỷ lệ 80/20, áp dụng thuật toán **SMOTE** (Oversampling) để cân bằng tập huấn luyện từ 394 mẫu gian lận lên 227,451 mẫu.
-
-    ## 📊 Kết quả Tiền xử lý & Áp dụng SMOTE
-
-**Sau khi áp dụng SMOTE:**
-
-| Tập dữ liệu | Kích thước | Ghi chú |
-|-------------|-----------|---------|
-| Train đặc trưng (X_train_res) | (454,902 × 30) | Sau SMOTE |
-| Train nhãn (y_train_res) | (454,902,) | 227,451 Bình thường vs 227,451 Gian lận |
-| Test đặc trưng (X_test) | (56,962 × 30) | Giữ nguyên, không SMOTE |
-| Test nhãn (y_test) | (56,962,) | Phân phối gốc |
-
-**Nhận xét:**
-- Trước SMOTE: dữ liệu gian lận chỉ chiếm **0.17%** → mô hình rất khó học
-- Sau SMOTE: tập Train được cân bằng hoàn toàn **50/50** 
-→ mô hình có đủ mẫu gian lận để học hiệu quả
-- Tập Test **giữ nguyên phân phối gốc** để đánh giá mô hình sát với thực tế nhất
-
-> 💡 **Lưu ý quan trọng:** SMOTE chỉ được áp dụng trên tập Train, 
-> **không áp dụng trên tập Test** để tránh làm sai lệch kết quả đánh giá!
-
-## Bước 4: Huấn luyện và Đánh giá Mô hình**
-   - Mã nguồn: `buoc_4.py` hoặc `Bước 4 Huấn luyện và Đánh giá Mô hình.py`
-   - Nhiệm vụ: Huấn luyện 3 mô hình phân loại: **Logistic Regression**, **Random Forest Classifier**, và **XGBoost Classifier**. Thực hiện dự đoán trên tập kiểm thử (giữ nguyên tỷ lệ mất cân bằng thực tế) và so sánh hiệu năng.
-   - Biểu đồ đầu ra: `confusion_matrices.png` (Ma trận nhầm lẫn của cả 3 mô hình).
-
-
-## Bước 5: Kết quả dự đoán (Submission)**
-   - Mã nguồn: `buoc_5_submission.py` hoặc `Bước 5 Tạo kết quả dự đoán (Submission).py`
-   - Nhiệm vụ: Huấn luyện mô hình đề xuất **Logistic Regression** (sử dụng SMOTE) và thực hiện dự đoán nhãn lớp cũng như xác suất gian lận (probability) cho tập kiểm thử (Test set - 20% dữ liệu gốc).
-   - Kết quả đầu ra: Tệp dữ liệu kết quả dự đoán [submission_logistic_regression.csv]
-
-Kết quả confusion matrix:
-![Confusion_matrix ](output/confusion_matrices.png)
----
-## 📊 Nhận xét Ma trận Nhầm lẫn (Confusion Matrix)
-
-| | Logistic Regression | Random Forest | XGBoost |
-|--|--|--|--|
-| Dự đoán đúng bình thường (TN) | 55,430 | 56,734 | 56,694 |
-| Báo nhầm gian lận (FP) | 1,434 | 130 | 170 |
-| Bỏ sót gian lận (FN) | 8 | 14 | 11 |
-| Bắt đúng gian lận (TP) | 90 | 84 | 87 |
-
-**💡 Nhận xét:**
-
-- **Logistic Regression** bắt được nhiều gian lận nhất **(90/98)** nhưng báo nhầm rất nhiều
-(1,434 giao dịch bình thường bị nghi oan) — gây phiền hà cho khách hàng
-- **Random Forest** báo nhầm ít nhất **(130 FP)** nhưng bỏ sót nhiều gian lận hơn (14 giao dịch)
-- **XGBoost** cân bằng tốt nhất — bắt được **87/98** giao dịch gian lận, 
-chỉ báo nhầm 170 trường hợp
-
-> ⚠️ Trong thực tế, **bỏ sót gian lận (FN) nguy hiểm hơn báo nhầm (FP)**.  
-> Do đó **Logistic Regression** vẫn là lựa chọn an toàn nhất dù Precision thấp.
-
-## 📈 Kết quả huấn luyện và So sánh mô hình
-Dưới đây là bảng so sánh hiệu năng của các mô hình (được xếp thứ tự theo độ nhạy **Recall** lớp 1):
-
-| Mô hình (Model) | Accuracy | Precision (Lớp 1) | Recall (Lớp 1) | F1-Score (Lớp 1) | Số giao dịch gian lận bắt được |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Logistic Regression** | 97.47% | 5.91% | **91.84%** | 11.10% | **90 / 98** |
-| **XGBoost** | 99.68% | 33.85% | **88.78%** | 49.01% | **87 / 98** |
-| **Random Forest** | 99.75% | **39.25%** | **85.71%** | **53.85%** | **84 / 98** |
-
-### Nhận xét quan trọng:
-- **Logistic Regression** đạt Recall cao nhất (91.84%) nhưng Precision vô cùng thấp (5.91%), tạo ra quá nhiều báo động giả (False Positives), gây phiền hà cho khách hàng trong thế giới thực.
-- **XGBoost** là mô hình có sự cân bằng tối ưu nhất cho bài toán này, đạt Recall **88.78%** và Precision tăng vượt bậc lên **33.85%** (F1-score 49.01%).
-- **Random Forest** cho số lượng báo động giả ít nhất với Precision cao nhất là **39.25%**, tuy nhiên bỏ sót nhiều giao dịch gian lận hơn (Recall 85.71%).
-> ⚠️ **Lưu ý:** Trong bài toán phát hiện gian lận, **bỏ sót giao dịch gian lận (False Negative) nguy hiểm hơn báo nhầm (False Positive)**. Do đó, **Logistic Regression** là lựa chọn phù hợp nhất cho môi trường thực tế.
-## 🎯 Kết luận
-
-Qua quá trình thử nghiệm 3 mô hình trên bộ dữ liệu mất cân bằng nghiêm trọng (0.17% gian lận), kết quả cho thấy:
-
-- Không có mô hình nào hoàn hảo — mỗi mô hình có sự đánh đổi riêng giữa Recall và Precision, lựa chọn chỉ số nào nên dùng phụ thuộc và yêu cầu của dự án
-- Kỹ thuật **SMOTE** giúp cải thiện đáng kể khả năng phát hiện gian lận so với không xử lý mất cân bằng
-- Dựa trên bố cảnh và yêu cầu của bài toán,chỉ số recall sẽ là chỉ số quan trọng nhất trong việc xác định và hạn chế bỏ sót khách hàng gian lận. phương pháp **Logistic Regression** được khuyến nghị cho môi trường thực tế vì bỏ sót ít giao dịch gian lận nhất (90/98) với chỉ số recall cao nhất 91,84%
-
-> Hướng phát triển tiếp theo: Tinh chỉnh ngưỡng phân loại (threshold tuning) và kết hợp các mô hình (Ensemble) để cải thiện cả Recall lẫn Precision cùng lúc.
+### Bước 5 — Tạo Kết Quả Dự Đoán (Submission)
+- **Mã nguồn:** `scripts/buoc_5_submission.py`
+- Huấn luyện mô hình đề xuất **Logistic Regression** trên toàn bộ dữ liệu
+- **Đầu ra:** `output/submission_logistic_regression.csv`
 
 ## 3. 📁 Cấu Trúc Dự Án
 
@@ -212,9 +96,8 @@ Do giới hạn dung lượng tệp tin của GitHub (<100MB), tệp dữ liệu
 - Bạn có thể tải bộ dữ liệu trực tiếp từ liên kết: [GeeksforGeeks creditcard.csv](https://media.geeksforgeeks.org/wp-content/uploads/20240904104950/creditcard.csv)
 - Sau khi tải về, hãy đặt tệp tin `creditcard.csv` vào thư mục gốc của dự án.
 
----
 
-## 🛠️ Hướng dẫn cài đặt và Chạy dự án
+## 5. 🛠️ Hướng dẫn cài đặt và Chạy dự án
 
 ### 1. Cài đặt các thư viện cần thiết
 Đảm bảo bạn đã cài đặt Python. Cài đặt các thư viện phụ thuộc bằng lệnh sau:
@@ -246,7 +129,61 @@ pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn xgboos
   $env:PYTHONIOENCODING='utf-8'; python buoc_5_submission.py
   ```
 
----
+## 6. Kết quả và đánh giá
+## 12. 📈 Kết Quả & Đánh Giá
+
+### So Sánh Hiệu Năng 3 Mô Hình
+
+| Mô Hình | Accuracy | Precision | Recall | F1-Score | Gian lận bắt được |
+|---------|----------|-----------|--------|----------|-------------------|
+| **Logistic Regression** | 97.47% | 5.91% | **91.84%** | 11.10% | **90/98** |
+| **XGBoost** | 99.68% | 33.85% | 88.78% | 49.01% | 87/98 |
+| **Random Forest** | 99.75% | **39.25%** | 85.71% | **53.85%** | 84/98 |
+
+### Ma Trận Nhầm Lẫn (Confusion Matrix)
+
+![Confusion Matrix](output/confusion_matrices.png)
+
+| | Logistic Regression | Random Forest | XGBoost |
+|--|--|--|--|
+| Dự đoán đúng bình thường (TN) | 55,430 | 56,734 | 56,694 |
+| Báo nhầm gian lận (FP) | 1,434 | 130 | 170 |
+| Bỏ sót gian lận (FN) | 8 | 14 | 11 |
+| Bắt đúng gian lận (TP) | **90** | 84 | 87 |
+
+### Nhận Xét
+- **Logistic Regression** bắt được nhiều gian lận nhất (90/98) nhưng báo nhầm nhiều (1,434 trường hợp)
+- **Random Forest** báo nhầm ít nhất (130 FP) nhưng bỏ sót nhiều gian lận hơn
+- **XGBoost** cân bằng tốt nhất giữa Recall và Precision
+
+> ⚠️ Trong thực tế, **bỏ sót gian lận (FN) nguy hiểm hơn báo nhầm (FP)**, do đó **Logistic Regression** là lựa chọn phù hợp nhất.
 
 ## 🤝 Đóng góp
 Nếu bạn có bất kỳ đề xuất cải tiến nào về mô hình (như Hyperparameter Tuning hoặc Grid Search), hãy tạo Pull Request hoặc Issues trên repo này!
+
+## 7. Những phát hiện chính
+## 13. 🔍 Những Phát Hiện Chính
+
+### 📊 Về Dữ Liệu
+- Dữ liệu mất cân bằng nghiêm trọng: chỉ **0.17%** giao dịch là gian lận (492/284,807)
+- Giao dịch gian lận có số tiền **thấp hơn** giao dịch bình thường (trung vị ~10 USD vs ~20 USD)
+  → Kẻ gian lận thường thực hiện nhiều giao dịch nhỏ để tránh bị phát hiện
+- Giao dịch gian lận **không theo chu kỳ thời gian** — hoạt động cả vào ban đêm (3h–4h sáng)
+  khi giao dịch bình thường ở mức thấp nhất
+- Các đặc trưng V1–V28 (kết quả PCA) **gần như độc lập với nhau**
+  → Không có đặc trưng đơn lẻ nào đủ mạnh để phát hiện gian lận
+
+### 🤖 Về Mô Hình
+- **SMOTE** cải thiện đáng kể khả năng phát hiện gian lận so với không xử lý mất cân bằng
+- Không có mô hình nào hoàn hảo — mỗi mô hình có sự đánh đổi riêng giữa Recall và Precision
+- **Logistic Regression** được khuyến nghị vì Recall cao nhất (91.84%), bỏ sót ít gian lận nhất
+
+### 🚀 Hướng Phát Triển Tiếp Theo
+- Tinh chỉnh ngưỡng phân loại (threshold tuning) để tối ưu Recall và Precision cùng lúc
+- Kết hợp các mô hình (Ensemble Methods) để cải thiện tổng thể
+- Thu thập thêm dữ liệu gian lận thực tế để giảm mức độ mất cân bằng
+
+
+
+
+
