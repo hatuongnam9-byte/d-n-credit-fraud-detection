@@ -43,7 +43,11 @@ Dự án giải quyết vấn đề mất cân bằng dữ liệu bằng **SMOTE
 - **Mã nguồn:** `scripts/buoc_2.py`
 - Thống kê mô tả số tiền giao dịch (`Amount`) và thời gian (`Time`)
 - Vẽ ma trận tương quan giữa tất cả các đặc trưng
-- **Đầu ra:** `output/amount_distribution.png`, `output/time_distribution.png`, `output/correlation_matrix.png`
+- **Đầu ra:** ![Biểu đồ phân phối số tiền giao dịch](output/amount_distribution.png)
+
+![Biểu đồ phân phối thời gian giao dịch](output/time_distribution.png)
+
+![Ma trận tương quan giữa các đặc trưng](output/correlation_matrix.png)
 
 
 ### Bước 3 — Tiền Xử Lý Dữ Liệu (Preprocessing)
@@ -56,12 +60,12 @@ Dự án giải quyết vấn đề mất cân bằng dữ liệu bằng **SMOTE
 - **Mã nguồn:** `scripts/buoc_4.py`
 - Huấn luyện 3 mô hình: **Logistic Regression**, **Random Forest**, **XGBoost**
 - Đánh giá dựa trên: Recall, Precision, F1-Score, ROC-AUC
-- **Đầu ra:** `output/confusion_matrices.png`
+- **Đầu ra:** ![Ma trận nhầm lẫn của mô hình](output/confusion_matrices.png)
 
 ### Bước 5 — Tạo Kết Quả Dự Đoán (Submission)
 - **Mã nguồn:** `scripts/buoc_5_submission.py`
 - Huấn luyện mô hình đề xuất **Logistic Regression** trên toàn bộ dữ liệu
-- **Đầu ra:** `output/submission_logistic_regression.csv`
+- **Đầu ra:** [Tải về file kết quả dự đoán tại đây](output/submission_logistic_regression.csv)
 
 ## 3. 📁 Cấu Trúc Dự Án
 
