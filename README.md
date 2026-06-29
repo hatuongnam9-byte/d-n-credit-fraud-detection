@@ -44,6 +44,7 @@ Dự án giải quyết vấn đề mất cân bằng dữ liệu bằng **SMOTE
 - Thống kê mô tả số tiền giao dịch (`Amount`) và thời gian (`Time`)
 - Vẽ ma trận tương quan giữa tất cả các đặc trưng
 - **Đầu ra:** `output/amount_distribution.png`, `output/time_distribution.png`, `output/correlation_matrix.png`
+![Uploading image.png…]()
 
 ### Bước 3 — Tiền Xử Lý Dữ Liệu (Preprocessing)
 - **Mã nguồn:** `scripts/buoc_3.py`
