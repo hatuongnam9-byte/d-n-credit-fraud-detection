@@ -25,6 +25,8 @@ Dự án này tiếp cận bài toán phát hiện gian lận như một bài to
 | Hợp lệ | 0 | Giao dịch bình thường |
 | Gian lận | 1 | Giao dịch đáng ngờ |
 
+Mô hình sẽ dựa trên những đặc điểm của khách hàng và tìm ra mô hình phù hợp cho việc xác định được những đối tượng có khả năng gian lận và tìm ra những khách hàng minh bạch uy tín dựa trên các đặc điểm ấy.
+
 ### ⚠️ Thách Thức Cốt Lõi: Mất Cân Bằng Dữ Liệu Nghiêm Trọng
 
 Bộ dữ liệu chứa **284.807 giao dịch**, trong đó chỉ có **492 giao dịch (0,17%)** là gian lận. Một mô hình đơn giản luôn dự đoán "không gian lận" sẽ đạt độ chính xác **99,83%** nhưng **không phát hiện được bất kỳ giao dịch gian lận nào** — điều này khiến độ chính xác (accuracy) trở thành một chỉ số hoàn toàn gây hiểu lầm trong bài toán này.
@@ -39,7 +41,7 @@ Dự án giải quyết vấn đề mất cân bằng dữ liệu bằng **SMOTE
 - Phân tích sự mất cân bằng giữa giao dịch bình thường (Class 0) và gian lận (Class 1)
 - **Đầu ra:** ![Biểu đồ phân phối các lớp](output/class_distribution.png)
 
-### Bước 2 — Phân Tích Mô Tả Chi Tiết (Descriptive Analysis)
+### Bước 2 — Phân Tích Mô Tả Chi Tiết (Descriptive Analysis) để tìm ra những phát hiện chính
 - **Mã nguồn:** `scripts/buoc_2.py`
 - Thống kê mô tả số tiền giao dịch (`Amount`) và thời gian (`Time`)
 - Vẽ ma trận tương quan giữa tất cả các đặc trưng
