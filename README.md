@@ -37,14 +37,14 @@ Dự án giải quyết vấn đề mất cân bằng dữ liệu bằng **SMOTE
 - **Mã nguồn:** `scripts/buoc_1.py`
 - Đọc dữ liệu, kiểm tra cấu trúc và tìm giá trị khuyết thiếu
 - Phân tích sự mất cân bằng giữa giao dịch bình thường (Class 0) và gian lận (Class 1)
-- **Đầu ra:** `output/class_distribution.png`
+- **Đầu ra:** ![Biểu đồ phân phối các lớp](output/class_distribution.png)
 
 ### Bước 2 — Phân Tích Mô Tả Chi Tiết (Descriptive Analysis)
 - **Mã nguồn:** `scripts/buoc_2.py`
 - Thống kê mô tả số tiền giao dịch (`Amount`) và thời gian (`Time`)
 - Vẽ ma trận tương quan giữa tất cả các đặc trưng
 - **Đầu ra:** `output/amount_distribution.png`, `output/time_distribution.png`, `output/correlation_matrix.png`
-![Uploading image.png…]()
+
 
 ### Bước 3 — Tiền Xử Lý Dữ Liệu (Preprocessing)
 - **Mã nguồn:** `scripts/buoc_3.py`
