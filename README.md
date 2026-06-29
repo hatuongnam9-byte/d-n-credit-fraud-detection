@@ -65,7 +65,7 @@ Dự án giải quyết vấn đề mất cân bằng dữ liệu bằng **SMOTE
 ### Bước 5 — Tạo Kết Quả Dự Đoán (Submission)
 - **Mã nguồn:** `scripts/buoc_5_submission.py`
 - Huấn luyện mô hình đề xuất **Logistic Regression** trên toàn bộ dữ liệu
-- **Đầu ra:** [Tải về file kết quả dự đoán tại đây](output/submission_logistic_regression.csv)
+- **Đầu ra:** Kết quả dự đoán được lưu tại: `output/submission_logistic_regression.csv`
 
 ## 3. 📁 Cấu Trúc Dự Án
 
