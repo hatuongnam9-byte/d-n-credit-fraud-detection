@@ -188,7 +188,31 @@ Nếu bạn có bất kỳ đề xuất cải tiến nào về mô hình (như H
 - Kết hợp các mô hình (Ensemble Methods) để cải thiện tổng thể
 - Thu thập thêm dữ liệu gian lận thực tế để giảm mức độ mất cân bằng
 
+## 8. Hạn chế
+- Bộ dữ liệu bị thiếu cân bằng và phương pháp SMOTE chỉ là phương pháp tạm thời vì nó là phương pháp tự nhân bản dữ liệu để giải quyết vấn đề chứ chưa thật sự đem lại sự tin tưởng tuyệt đối cho kết quả đầu ra. Cần phải thu thập thêm các dữ liệu nên cũng rất dễ bị rủi ro mô hình bị học lệch dẫn đến khi vào thực tế mô hình không thể dự đoán chính xác
+- Việc áp dụng phương pháp PCA sẽ dẫn đến hạn chế trong việc biết rõ tại sao và những yếu tố nào thật sự giúp xác định các đối tượng gian lân vì ý nghĩa các biến đã được thay thế bằng biến V1,V2,V3 nhưng thực chất ý nghĩa biến đó là gì thì không biết. Dẫn đến giả sử phòng risk operation muốn hiểu ý nghĩa các biến để tư vấn cho khách hàng thì không làm được.
+- Bộ dữ liệu này bản chất là bộ dữ liệu cố định, các biến đều là cố định trong khi hành vi con người luôn thay đổi theo ngày, tháng nên mô hình dự đoán sẽ dễ bị lỗi thời nếu không cập nhật liên tục.
+- Mô hình logistic regression tuy không bỏ lọt gian lận nhiều nhưng lại để việc bắt nhầm khách hàng gian lận là tương đối nhiều điều này dẫn đén tăng chi phí giải quyết vấn đề này của ngân hàng. Dự án chưa thật sự tối ưu bài toán chi phí kinh tế của ngân hàng
 
+## 9. Hướng phát triển
+-  thu thập thêm dữ liệu khách hàng gian lận để cân bằng lại dữ liệu thay thế phương pháp nhân bản dữ liệu SMOTE
+- Tìm ra giải pháp khác thay thế phương pháp PCA vừa giúp làm rõ ý nghĩa các biến, vừa đảm bảo tính bảo mật đúng như yêu cầu từ ngân hàng
+- Cập nhật và thu thập bộ dữ liệu mới giúp xác định sự thay đổi hành vi của khách hàng hằng ngày để giúp cho mô hình nâng cao khả năng dự đoán
+- Kết hợp mô hình logistic regression với một mô hình khác giúp ngân hàng giảm thiểu vấn đề báo nhầm gian lận
 
+## 10. Tài liệu tham khảo
+- Dal Pozzolo, A., Caelen, O., Johnson, R.A. and Bontempi, G., 2015. Calibrating probability with undersampling for unbalanced classification. In Symposium on Computational Intelligence and Data Mining (CIDM). IEEE.
 
+- Dal Pozzolo, A., Caelen, O., Le Borgne, Y.A., Waterschoot, S. and Bontempi, G., 2014. Learned lessons in credit card fraud detection from a practitioner perspective. Expert Systems with Applications, 41(10), pp. 4915-4928.
 
+- Dal Pozzolo, A., Boracchi, G., Caelen, O., Alippi, C. and Bontempi, G., 2018. Credit card fraud detection: a realistic modeling and a novel learning strategy. IEEE Transactions on Neural Networks and Learning Systems, 29(8), pp. 3784-3797.
+
+- Dal Pozzolo, A., 2015. Adaptive machine learning for credit card fraud detection. PhD thesis. Université Libre de Bruxelles (ULB), Machine Learning Group (MLG).
+
+- Carcillo, F., Dal Pozzolo, A., Le Borgne, Y.A., Caelen, O., Mazzer, Y. and Bontempi, G., 2018. Scarff: a scalable framework for streaming credit card fraud detection with Spark. Information Fusion, 41, pp. 182-194.
+
+- Carcillo, F., Le Borgne, Y.A., Caelen, O. and Bontempi, G., 2018. Streaming active learning strategies for real-life credit card fraud detection: assessment and visualization. International Journal of Data Science and Analytics, 5(4), pp. 285-300.
+
+- Lebichot, B., Le Borgne, Y.A., He, L., Oblé, F. and Bontempi, G., 2019. Deep-learning domain adaptation techniques for credit cards fraud detection. In INNSBDDL 2019: Recent Advances in Big Data and Deep Learning (pp. 78-88). Springer.
+
+- Carcillo, F., Le Borgne, Y.A., Caelen, O., Oblé, F. and Bontempi, G., 2019. Combining unsupervised and supervised learning in credit card fraud detection. Information Sciences, 504, pp. 285-300. (Lưu ý: Đã bổ sung số volume và trang chuẩn xác của bài báo này trên Elsevier).
